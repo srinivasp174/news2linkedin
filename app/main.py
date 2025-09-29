@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from schemas import GeneratePostRequest, GeneratePostResponse
-from agent import build_agent
+from .schemas import GeneratePostRequest, GeneratePostResponse
+from .agent import build_agent
 from langchain_google_genai import ChatGoogleGenerativeAI
 import re
 from dotenv import load_dotenv
