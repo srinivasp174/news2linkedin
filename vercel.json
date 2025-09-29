@@ -1,17 +1,18 @@
-"routes": [
-  {
-    "src": "/generate-post",
-    "methods": ["POST"],
-    "dest": "app/main.py"
-  },
-  {
-    "src": "/docs",
-    "methods": ["GET"],
-    "dest": "app/main.py"
-  },
-  {
-    "src": "/openapi.json",
-    "methods": ["GET"],
-    "dest": "app/main.py"
-  }
-]
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/main.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app/main.py"
+    }
+  ]
+}
